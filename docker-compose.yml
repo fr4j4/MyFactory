@@ -1,0 +1,22 @@
+version: '2'
+services:
+  factorio:
+    container_name: factorio_server
+    build: .
+    ports:
+     - 34197:34197/udp
+     - 27015:27015/tcp
+     - 25575:25575
+    environment:
+     - SERVER_NAME=[MyFactory]
+     - SERVER_DESCRIPTION=Having a goodtime
+     - MAX_PLAYERS=10
+     - USERNAME=
+     - PASSWORD=
+     - SERVER_PASSWORD=myfactory
+     - ADMIN_NAME=fr4j4
+     - PEACEFUL_MODE=false
+    volumes:
+     - ./saves:/factorio/saves
+     
+    entrypoint: /bin/sh /factorio/run.sh
