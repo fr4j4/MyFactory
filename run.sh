@@ -11,8 +11,14 @@ echo "Config files generation done"
 echo "creating new game file..."
 
 #ls /factorio
+save_file=/factorio/saves/current_game.zip
 
+if [ ! -f "$save_file" ]
+then
+	echo "Save file not found"
+fi
 ./new_game.sh
+
 echo "creating new game file done"
 echo "Starting server..."
 ./start_server.sh

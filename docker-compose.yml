@@ -1,4 +1,4 @@
-version: '2'
+version: '3.7'
 services:
   factorio:
     container_name: factorio_server
@@ -11,12 +11,11 @@ services:
      - SERVER_NAME=[MyFactory]
      - SERVER_DESCRIPTION=Having a goodtime
      - MAX_PLAYERS=10
-     - USERNAME=
-     - PASSWORD=
+     - USERNAME=fr4j4
+     - PASSWORD=madware
      - SERVER_PASSWORD=myfactory
      - ADMIN_NAME=fr4j4
      - PEACEFUL_MODE=false
     volumes:
      - ./saves:/factorio/saves
-     
-    entrypoint: /bin/sh /factorio/run.sh
+    entrypoint: /factorio/run.sh
